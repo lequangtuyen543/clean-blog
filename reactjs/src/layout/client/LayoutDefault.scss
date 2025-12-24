@@ -3,11 +3,43 @@
   color: var(--text-color);
 }
 
+.page-section {
+  background-size: cover;
+  background-image: url('../../assets/img/home-bg.jpg');
+}
+
 .header {
   .logo {
     font-size: 20px;
     font-weight: 800;
     color: var(--text-color);
+  }
+}
+
+.hero {
+  h1 {
+    z-index: 1;
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  p {
+    z-index: 1;
+    font-size: 24px;
+    color: #dddddd;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.5;
+    z-index: -1;
   }
 }
 
