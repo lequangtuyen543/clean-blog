@@ -41,6 +41,7 @@ export const Home = () => {
             </article>
           </>
         ))}
+        <div className="d-flex justify-content-end mt-4"><a className="btn btn-primary text-uppercase post-btn" href="/posts">Older Posts →</a></div>
       </div>
     </>
   );
