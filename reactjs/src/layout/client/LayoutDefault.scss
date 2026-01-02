@@ -17,6 +17,8 @@
 }
 
 .hero {
+  padding: 0;
+
   h1 {
     z-index: 1;
     font-size: 48px;
@@ -41,24 +43,16 @@
     opacity: 0.5;
     z-index: -1;
   }
-}
 
-.main {
-  min-height: calc(100vh - 120px); // Adjust based on header and footer height
-  padding: 20px;
+  &-content {
+    padding: 128px 0;
+  }
 }
 
 .footer {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 10px 20px;
+  border-top: 1px solid #ddd;
 
-  .container {
-    display: flex;
-    justify-content: center;
-  }
-
-  span {
-    margin: auto 0;
+  hr {
+    border-top-width: 0;
   }
 }
