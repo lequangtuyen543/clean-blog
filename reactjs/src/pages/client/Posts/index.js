@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getListPosts } from '../../../services/postsServices';
-import './Home.scss';
+import './Posts.scss';
+import { GoBack } from '../../../components/GoBack';
 
-export const Home = () => {
+export const Posts = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -19,6 +20,7 @@ export const Home = () => {
 
   return (
     <>
+      <GoBack />
       <div className="bg-white py-12 sm:py-16 post">
         {data && data.map((post) => (
           <>
@@ -41,7 +43,6 @@ export const Home = () => {
             </article>
           </>
         ))}
-        <div className="d-flex justify-content-end mt-4"><a className="btn btn-primary text-uppercase btn-primary" href="/posts">Older Posts →</a></div>
       </div>
     </>
   );

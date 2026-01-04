@@ -1,7 +1,6 @@
 import PrivateRoutes from "../components/PrivateRoutes/index.js";
 import { LayoutAdmin } from "../layout/admin/index.js";
 import { LayoutDefault } from "../layout/client";
-import { Company } from "../pages/client/Company/index.js";
 import { CompanyDetail } from "../pages/client/CompanyDetail/index.js";
 import { Home } from "../pages/client/Home";
 import { JobDetail } from "../pages/client/JobDetail.js";
@@ -16,6 +15,7 @@ import { ManageCV } from "../pages/admin/ManageCV/index.js";
 import { ReadJob } from "../pages/admin/ManageJob/ReadJob.js";
 import { CreateJob } from "../pages/admin/ManageJob/CreateJob.js";
 import { ReadCV } from "../pages/admin/ManageCV/ReadCV.js";
+import { Posts } from "../pages/client/Posts/index.js";
 
 export const routes = [
   // Public layout
@@ -29,7 +29,7 @@ export const routes = [
       { path: "register", element: <Register /> },
       { path: "search", element: <Search /> },
       { path: "job/:id", element: <JobDetail /> },
-      { path: "company", element: <Company /> },
+      { path: "posts", element: <Posts /> },
       { path: "company/:id", element: <CompanyDetail /> },
     ],
   },

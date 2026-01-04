@@ -11,7 +11,8 @@ export const GoBack = () => {
       type="default"
       icon={<ArrowLeftOutlined />}
       onClick={() => navigate(-1)}
-      style={{ marginBottom: '10px' }}
+      style={{ marginTop: '15px' }}
+      className="btn-primary"
     >
       Quay lại
     </Button>

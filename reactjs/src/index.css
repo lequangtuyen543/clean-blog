@@ -49,3 +49,15 @@ code {
 a {
   text-decoration: none !important;
 }
+
+.btn-primary {
+  background: #0085A1 !important;
+  color: white !important;
+  padding: 20px 30px !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: #006f85 !important;
+  color: white !important;
+}
