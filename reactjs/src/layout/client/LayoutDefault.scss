@@ -1,13 +1,3 @@
-.layout-default {
-  // background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.page-section {
-  background-size: cover;
-  background-image: url('../../assets/img/home-bg.jpg');
-}
-
 .header {
   .logo {
     font-size: 20px;
@@ -17,6 +7,8 @@
 }
 
 .hero {
+  background-size: cover;
+  background-image: url('../../assets/img/home-bg.jpg');
   padding: 0;
 
   h1 {

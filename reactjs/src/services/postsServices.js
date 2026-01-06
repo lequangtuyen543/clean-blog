@@ -5,3 +5,7 @@ export const getListPosts = async () => {
   return result;
 };
 
+export const getDetailPost = async (id) => {
+  const result = await GET(`posts/${id}`);
+  return result;
+};

@@ -26,7 +26,7 @@ export const Posts = () => {
           <>
             <article className="flex flex-col items-start justify-between border-b border-gray-200 blog-card">
               <div className="group relative grow post-preview">
-                <a href="/">
+                <a href={`/post/${post.id}`}>
                   <h2 className="post-title">
                     {post.title}
                   </h2>
