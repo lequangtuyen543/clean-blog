@@ -3,6 +3,7 @@ import { getDetailPost } from '../../../services/postsServices';
 import './PostDetail.scss';
 import { GoBack } from '../../../components/GoBack';
 import { useParams } from 'react-router-dom';
+import { HeroPost } from '../../../components/HeroPost';
 
 export const PostDetail = () => {
   const [data, setData] = useState();
@@ -22,14 +23,19 @@ export const PostDetail = () => {
 
   return (
     <>
-      <GoBack />
-      {data && (
-        <>
-          <p style={{ whiteSpace: "pre-line" }}>
-            {data.content}
-          </p>
-        </>
-      )}
+      <HeroPost data={data} />
+      <div className='container'>
+        <GoBack />
+        {data && (
+          <>
+
+            <p style={{ whiteSpace: "pre-line" }}>
+              {data.content}
+            </p>
+
+          </>
+        )}
+      </div>
     </>
   );
 };

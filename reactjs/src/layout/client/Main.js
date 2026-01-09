@@ -4,9 +4,7 @@ export const Main = () => {
   return (
     <>
       <div className="main">
-        <div className="container">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </>
   );

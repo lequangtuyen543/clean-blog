@@ -2,11 +2,9 @@ import PrivateRoutes from "../components/PrivateRoutes/index.js";
 import { LayoutAdmin } from "../layout/admin/index.js";
 import { LayoutDefault } from "../layout/client";
 import { Home } from "../pages/client/Home";
-import { JobDetail } from "../pages/client/JobDetail.js";
 import { Login } from "../pages/client/Login/index.js";
 import { Logout } from "../pages/client/Logout/index.js";
 import { Register } from "../pages/client/Register/index.js";
-import { Search } from "../pages/client/Search";
 import { Dashboard } from "../pages/admin/Dashboard";
 import { ManageCompany } from "../pages/admin/ManagerCompany/index.js";
 import { ManageJob } from "../pages/admin/ManageJob/index.js";
@@ -27,10 +25,9 @@ export const routes = [
       { path: "login", element: <Login /> },
       { path: "logout", element: <Logout /> },
       { path: "register", element: <Register /> },
-      { path: "search", element: <Search /> },
-      { path: "job/:id", element: <JobDetail /> },
       { path: "posts", element: <Posts /> },
       { path: "post/:id", element: <PostDetail /> },
+      { path: "about", element: <PostDetail /> },
     ],
   },
 

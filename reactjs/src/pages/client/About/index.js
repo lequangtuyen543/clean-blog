@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getListPosts } from '../../../services/postsServices';
-import './Posts.scss';
-import { GoBack } from '../../../components/GoBack';
+import './Home.scss';
 
-export const Posts = () => {
+export const Home = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -33,7 +32,6 @@ export const Posts = () => {
         </div>
       </div>
       <div className='container'>
-        <GoBack />
         <div className="bg-white py-12 sm:py-16 post">
           {data && data.map((post) => (
             <>
@@ -49,13 +47,12 @@ export const Posts = () => {
                   </a>
                 </div>
                 <div className="flex items-center gap-x-4 text-xs mb-5 post-meta">
-                  Posted by <a href="/">{post.createdBy}</a> on <span>
-                    {post.createdAt}
-                  </span>
+                  Posted by <a href="/">{post.createdBy}</a> on {post.createdAt}
                 </div>
               </article>
             </>
           ))}
+          <div className="d-flex justify-content-end mt-4"><a className="btn btn-primary text-uppercase btn-primary" href="/posts">Older Posts →</a></div>
         </div>
       </div>
     </>
