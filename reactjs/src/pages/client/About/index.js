@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { getListPosts } from '../../../services/postsServices';
 import { HeroComponent } from '../../../components/HeroComponent';
 import aboutBg from '../../../assets/img/about-bg.jpg';
 

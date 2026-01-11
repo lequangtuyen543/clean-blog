@@ -15,6 +15,7 @@ import { ReadCV } from "../pages/admin/ManageCV/ReadCV.js";
 import { Posts } from "../pages/client/Posts/index.js";
 import { PostDetail } from "../pages/client/PostDetail/index.js";
 import { About } from "../pages/client/About/index.js";
+import { Contact } from "../pages/client/Contact/index.js";
 
 export const routes = [
   // Public layout
@@ -29,6 +30,7 @@ export const routes = [
       { path: "posts", element: <Posts /> },
       { path: "post/:id", element: <PostDetail /> },
       { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
 
