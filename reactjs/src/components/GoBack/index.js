@@ -11,7 +11,7 @@ export const GoBack = () => {
       type="default"
       icon={<ArrowLeftOutlined />}
       onClick={() => navigate(-1)}
-      style={{ marginTop: '15px' }}
+      style={{ marginBottom: '20px' }}
       className="btn-primary"
     >
       Quay lại

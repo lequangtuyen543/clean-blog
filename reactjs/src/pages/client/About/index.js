@@ -1,58 +1,24 @@
 import { useEffect, useState } from 'react';
 import { getListPosts } from '../../../services/postsServices';
-import './Home.scss';
+import { HeroComponent } from '../../../components/HeroComponent';
+import aboutBg from '../../../assets/img/about-bg.jpg';
 
-export const Home = () => {
-  const [data, setData] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getListPosts();
-      if (res) {
-        setData(res);
-      }
-    };
-    fetchData();
-  }, []);
-
-  console.log('data', data);
-
+export const About = () => {
   return (
     <>
-      <div className="relative isolate px-6 pt-14 lg:px-8 hero">
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 hero-content">
-          <div className="text-center">
-            <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-              Clean Blog
-            </h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-              A Blog Theme by Start Bootstrap
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroComponent title="About Me" subtitle="This is what I do." thumbnail={aboutBg} />
+
       <div className='container'>
-        <div className="bg-white py-12 sm:py-16 post">
-          {data && data.map((post) => (
-            <>
-              <article className="flex flex-col items-start justify-between border-b border-gray-200 blog-card">
-                <div className="group relative grow post-preview">
-                  <a href={`/post/${post.id}`}>
-                    <h2 className="post-title">
-                      {post.title}
-                    </h2>
-                    <h3 className="post-subtitle">
-                      {post.subtitle}
-                    </h3>
-                  </a>
-                </div>
-                <div className="flex items-center gap-x-4 text-xs mb-5 post-meta">
-                  Posted by <a href="/">{post.createdBy}</a> on {post.createdAt}
-                </div>
-              </article>
-            </>
-          ))}
-          <div className="d-flex justify-content-end mt-4"><a className="btn btn-primary text-uppercase btn-primary" href="/posts">Older Posts →</a></div>
+        <div className="bg-white py-12 sm:py-16">
+          <p className="whitespace-pre-line">
+            {`
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!
+          `}
+          </p>
         </div>
       </div>
     </>

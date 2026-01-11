@@ -24,17 +24,18 @@ export const PostDetail = () => {
   return (
     <>
       <HeroPost data={data} />
+
       <div className='container'>
-        <GoBack />
         {data && (
           <>
-
-            <p style={{ whiteSpace: "pre-line" }}>
-              {data.content}
-            </p>
-
+            <div className="bg-white py-12 sm:py-16">
+              <p style={{ whiteSpace: "pre-line" }}>
+                {data.content}
+              </p>
+            </div>
           </>
         )}
+        <GoBack />
       </div>
     </>
   );
