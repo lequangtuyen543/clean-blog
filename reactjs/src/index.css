@@ -55,6 +55,7 @@ a {
   color: white !important;
   padding: 20px 30px !important;
   border: none !important;
+  text-transform: uppercase !important;
 }
 
 .btn-primary:hover {

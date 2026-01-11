@@ -32,8 +32,7 @@ export const Posts = () => {
           </div>
         </div>
       </div>
-      <div className='container'>
-        <GoBack />
+      <div className='container'>        
         <div className="bg-white py-12 sm:py-16 post">
           {data && data.map((post) => (
             <>
@@ -57,6 +56,8 @@ export const Posts = () => {
             </>
           ))}
         </div>
+
+        <GoBack />
       </div>
     </>
   );
