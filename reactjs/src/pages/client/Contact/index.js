@@ -1,8 +1,8 @@
-import { HeroComponent } from '../../../components/HeroComponent';
 import contactBg from '../../../assets/img/contact-bg.jpg';
 import { Button, Form, Input, Space } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import './Contact.scss';
+import { HeroItem } from '../../../components/HeroItem';
 
 export const Contact = () => {
   const onFinish = values => {
@@ -15,7 +15,7 @@ export const Contact = () => {
 
   return (
     <>
-      <HeroComponent title="Contact Me" subtitle="Have questions? I have answers." thumbnail={contactBg} />
+      <HeroItem title="Contact Me" subtitle="Have questions? I have answers." thumbnail={contactBg} />
 
       <div className='container'>
         <div className="bg-white py-12 sm:py-16">
@@ -28,9 +28,6 @@ export const Contact = () => {
 
         <Form
           name="basic"
-          // labelCol={{ span: 8 }}
-          // wrapperCol={{ span: 16 }}
-          // style={{ maxWidth: 600 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}

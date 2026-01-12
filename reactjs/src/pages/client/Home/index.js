@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getListPosts } from '../../../services/postsServices';
 import './Home.scss';
-import { HeroComponent } from '../../../components/HeroComponent';
 import homeBg from '../../../assets/img/home-bg.jpg';
+import { HeroItem } from '../../../components/HeroItem';
 
 export const Home = () => {
   const [data, setData] = useState();
@@ -21,7 +21,7 @@ export const Home = () => {
 
   return (
     <>
-      <HeroComponent title="Clean Blog" subtitle="A Blog Theme by Start Bootstrap" thumbnail={homeBg} />
+      <HeroItem title="Clean Blog" subtitle="A Blog Theme by Start Bootstrap" thumbnail={homeBg} />
       <div className='container'>
         <div className="bg-white py-12 sm:py-16 post">
           {data && data.map((post) => (

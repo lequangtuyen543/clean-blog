@@ -1,10 +1,10 @@
-import { HeroComponent } from '../../../components/HeroComponent';
 import aboutBg from '../../../assets/img/about-bg.jpg';
+import { HeroItem } from '../../../components/HeroItem';
 
 export const About = () => {
   return (
     <>
-      <HeroComponent title="About Me" subtitle="This is what I do." thumbnail={aboutBg} />
+      <HeroItem title="About Me" subtitle="This is what I do." thumbnail={aboutBg} />
 
       <div className='container'>
         <div className="bg-white py-12 sm:py-16">

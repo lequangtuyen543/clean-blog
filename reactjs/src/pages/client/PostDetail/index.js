@@ -3,7 +3,8 @@ import { getDetailPost } from '../../../services/postsServices';
 import './PostDetail.scss';
 import { GoBack } from '../../../components/GoBack';
 import { useParams } from 'react-router-dom';
-import { HeroPost } from '../../../components/HeroPost';
+import postBg from '../../../assets/img/post-bg.jpg';
+import { HeroItem } from '../../../components/HeroItem';
 
 export const PostDetail = () => {
   const [data, setData] = useState();
@@ -23,7 +24,11 @@ export const PostDetail = () => {
 
   return (
     <>
-      <HeroPost data={data} />
+      {data && (
+        <>
+        <HeroItem title={data.title} subtitle={data.subtitle} thumbnail={postBg} createdBy={data.createdBy} createdAt={data.createdAt}/>
+        </>
+      )}      
 
       <div className='container'>
         {data && (
