@@ -33,7 +33,7 @@ export const Login = () => {
 
         setTimeout(() => {
           messageApi.error('Login successfully!');
-          navigate("/");
+          navigate("/admin/dashboard");
         }, 1000);
       } else {
         // login fail

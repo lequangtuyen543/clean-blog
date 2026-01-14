@@ -1,12 +1,12 @@
 import PrivateRoutes from "../components/PrivateRoutes/index.js";
 import { LayoutAdmin } from "../layout/admin/index.js";
-import { LayoutDefault } from "../layout/client";
+import { LayoutClient } from "../layout/client";
 import { Home } from "../pages/client/Home";
 import { Login } from "../pages/client/Login/index.js";
 import { Logout } from "../pages/client/Logout/index.js";
 import { Register } from "../pages/client/Register/index.js";
 import { Dashboard } from "../pages/admin/Dashboard";
-import { ManageCompany } from "../pages/admin/ManagerCompany/index.js";
+import { InfoUser } from "../pages/admin/InfoUser/index.js";
 import { ManageJob } from "../pages/admin/ManageJob/index.js";
 import { ManageCV } from "../pages/admin/ManageCV/index.js";
 import { ReadJob } from "../pages/admin/ManageJob/ReadJob.js";
@@ -22,7 +22,7 @@ export const routes = [
   // Public layout
   {
     path: "/",
-    element: <LayoutDefault />,
+    element: <LayoutClient />,
     children: [
       { index: true, element: <Home /> },      
       { path: "register", element: <Register /> },
@@ -45,7 +45,7 @@ export const routes = [
         element: <LayoutAdmin />, // layout admin riêng
         children: [
           { path: "dashboard", element: <Dashboard /> },
-          { path: "manage-company", element: <ManageCompany /> },
+          { path: "info-user", element: <InfoUser /> },
           { path: "manage-job", element: <ManageJob /> },
           { path: "manage-cv", element: <ManageCV /> },
           { path: "create-job", element: <CreateJob /> },

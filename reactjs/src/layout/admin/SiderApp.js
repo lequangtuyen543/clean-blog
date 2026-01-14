@@ -1,4 +1,4 @@
-import { AppstoreOutlined, BookOutlined, CompassOutlined, DashboardOutlined, MailOutlined, SettingOutlined, WechatOutlined } from '@ant-design/icons';
+import { UserOutlined, BookOutlined, DashboardOutlined, WechatOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +10,9 @@ export const SiderApp = () => {
       icon: <DashboardOutlined />,
     },
     {
-      key: 'manage-company',
-      label: <Link to="/admin/manage-company">Manage Company</Link>,
-      icon: <CompassOutlined />,
+      key: 'info-user',
+      label: <Link to="/admin/info-user">Info User</Link>,
+      icon: <UserOutlined />,
     },
     {
       key: 'manage-job',

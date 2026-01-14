@@ -5,7 +5,7 @@ import { getCookie } from "../../../helpers/cookie";
 import TextArea from "antd/es/input/TextArea";
 const { Option } = Select;
 
-export const ManageCompany = () => {
+export const InfoUser = () => {
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
   const [data, setData] = useState();
