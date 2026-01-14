@@ -44,6 +44,9 @@ export const Header = () => {
             <a href="/contact" className="text-sm/6 font-semibold text-gray-900">
               Contact
             </a>
+            <a href="/register" className="text-sm/6 font-semibold text-gray-900">
+              Register
+            </a>
           </PopoverGroup>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -87,6 +90,12 @@ export const Header = () => {
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     Contact
+                  </a>
+                  <a
+                    href="/register"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    Register
                   </a>
                 </div>
               </div>

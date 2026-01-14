@@ -20,9 +20,9 @@ export const Contact = () => {
       <div className='container'>
         <div className="bg-white py-12 sm:py-16">
           <p className="whitespace-pre-line">
-            {`
-            Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!
-          `}
+            {
+              `Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!`
+            }
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export const Contact = () => {
             </Space.Compact>
           </Form.Item>
 
-          <Form.Item name="massage" label="Massage" rules={[{ required: true, message: 'Please input your message!' }]}>
+          <Form.Item name="message" label="Message" rules={[{ required: true, message: 'Please input your message!' }]}>
             <TextArea rows={4} />
           </Form.Item>
 

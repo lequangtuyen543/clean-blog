@@ -1,8 +1,10 @@
-import { Button, Card, Form, Input, message } from 'antd';
+import { Button, Card, Checkbox, Form, Input, message } from 'antd';
 import { checkExist, createCompany } from '../../../services/companyService';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import generateToken from '../../../helpers/generateToken';
+import './Register.scss';
+
 export const Register = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ export const Register = () => {
     setLoading(true);
     try {
       values.token = generateToken();
-      
+
       const checkExistEmail = await checkExist("email", values.email);
       const checkExistPhone = await checkExist("phone", values.phone);
 
@@ -45,60 +47,81 @@ export const Register = () => {
     console.log('Failed:', errorInfo);
   };
 
+  const onChange = e => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
   return (
     <>
       {contextHolder}
-      <h1>Register Page</h1>
-      <Card title={"Register"} style={{ maxWidth: 300, margin: "0 auto" }}>
-        <Form
-          name="basic"
-          // labelCol={{ span: 8 }}
-          // wrapperCol={{ span: 16 }}
-          // style={{ maxWidth: 600 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-          layout="vertical"
-        >
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
-          >
-            <Input />
-          </Form.Item>
 
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-          >
-            <Input.Password />
-          </Form.Item>
+      <div className='container'>
+        <div className="bg-white py-12 sm:py-16">
+          <Card title={<>
+            <h2 className='text-2xl font-bold py-2'>Create an Account</h2>
+            <p>Enter your personal details to create account</p>
+          </>} style={{ maxWidth: 400, margin: "0 auto" }}>
+            <Form
+              name="basic"
+              initialValues={{ remember: true }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+              layout="vertical"
+            >
+              <Form.Item
+                label="Your Name"
+                name="name"
+                rules={[{ required: true, message: 'Please input your name!' }]}
+              >
+                <Input />
+              </Form.Item>
 
-          <Form.Item
-            label="Company Name"
-            name="name"
-            rules={[{ required: true, message: 'Please input your company name!' }]}
-          >
-            <Input />
-          </Form.Item>
+              <Form.Item
+                label="Your Email"
+                name="email"
+                rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
+              >
+                <Input />
+              </Form.Item>
 
-          <Form.Item
-            label="Company Phone"
-            name="phone"
-          >
-            <Input />
-          </Form.Item>
+              <Form.Item
+                label="User Name"
+                name="userName"
+                rules={[{ required: true, message: 'Please input user name!' }]}
+              >
+                <Input />
+              </Form.Item>
 
-          <Form.Item label={null}>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </Card>
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[{ required: true, message: 'Please input your password!' }]}
+              >
+                <Input.Password />
+              </Form.Item>
+
+              <Form.Item
+                name="terms"
+                rules={[{ required: true, message: 'You must agree before submitting.' }]}
+              >
+                <Checkbox>
+                  I agree and accept the <a href="#">terms and conditions</a>
+                </Checkbox>
+              </Form.Item>
+
+
+
+              <Form.Item label={null}>
+                <Button type="primary" htmlType="submit" loading={loading} className='btn-primary'>
+                  Create Account
+                </Button>
+              </Form.Item>
+            </Form>
+          </Card>
+        </div>
+      </div>
+
     </>
   );
 }
