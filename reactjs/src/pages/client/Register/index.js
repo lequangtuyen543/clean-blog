@@ -1,9 +1,11 @@
-import { Button, Card, Checkbox, Form, Input, message } from 'antd';
+import { Button, Card, Checkbox, Form, Input, message, Typography } from 'antd';
 import { checkExist, createUser } from '../../../services/userService';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import generateToken from '../../../helpers/generateToken';
 import './Register.scss';
+
+const { Text } = Typography;
 
 export const Register = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -16,7 +18,7 @@ export const Register = () => {
       values.token = generateToken();
 
       const checkExistEmail = await checkExist("email", values.email);
-      const checkExistUserName = await checkExist("userName", values.userName);
+      const checkExistUserName = await checkExist("username", values.username);
 
       if (checkExistEmail.length > 0) {
         messageApi.error('Email already exists!');
@@ -30,14 +32,14 @@ export const Register = () => {
 
       console.log('res', res);
 
-      // if (res) {
-      //   messageApi.success('Create user successfully!');
-      //   setTimeout(() => {
-      //     navigate('/login');
-      //   }, 3000);
-      // } else {
-      //   messageApi.error('Create user failed!');
-      // }
+      if (res) {
+        messageApi.success('Create user successfully!');
+        setTimeout(() => {
+          navigate('/login');
+        }, 3000);
+      } else {
+        messageApi.error('Create user failed!');
+      }
     } catch (error) {
       messageApi.error('Something went wrong!');
     } finally {
@@ -84,8 +86,8 @@ export const Register = () => {
               </Form.Item>
 
               <Form.Item
-                label="User Name"
-                name="userName"
+                label="Username"
+                name="username"
                 rules={[{ required: true, message: 'Please input user name!' }]}
               >
                 <Input />
@@ -121,6 +123,12 @@ export const Register = () => {
                 <Button type="primary" htmlType="submit" loading={loading} className='btn-primary'>
                   Create Account
                 </Button>
+              </Form.Item>
+
+              <Form.Item label={null}>
+                <Text>
+                  Already have an account? <a href="/login">Log in</a>
+                </Text>
               </Form.Item>
             </Form>
           </Card>

@@ -414,7 +414,7 @@
       "id": "yWpvNbv",
       "name": "Le Quang Tuyen",
       "email": "lequangtuyen@gmail.com",
-      "userName": "lequangtuyen",
+      "username": "lequangtuyen",
       "password": "1",
       "terms": true,
       "token": "fJlQq4OXNqtIe4MzFFPe"
@@ -423,7 +423,7 @@
       "id": "kA92LmQ",
       "name": "Nguyen Van An",
       "email": "nguyenvanan@gmail.com",
-      "userName": "nguyenvanan",
+      "username": "nguyenvanan",
       "password": "123456",
       "terms": true,
       "token": "X9QeT1LpA0sZMnR8H2Kc"
@@ -432,10 +432,19 @@
       "id": "Zr8P0Ds",
       "name": "Tran Thi Mai",
       "email": "tranthimai@gmail.com",
-      "userName": "tranthimai",
+      "username": "tranthimai",
       "password": "password123",
       "terms": true,
       "token": "QW8sLpM2T0XrE7B9CNaF"
+    },
+    {
+      "name": "Le Van A",
+      "email": "levana@gmail.com",
+      "username": "levana",
+      "password": "1",
+      "terms": true,
+      "token": "IwpzG1iLVV3dCEmXmp1t",
+      "id": "sXVDw9N"
     }
   ]
 }

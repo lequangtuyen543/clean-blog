@@ -24,10 +24,10 @@ export const routes = [
     path: "/",
     element: <LayoutDefault />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <Home /> },      
+      { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "logout", element: <Logout /> },
-      { path: "register", element: <Register /> },
       { path: "posts", element: <Posts /> },
       { path: "post/:id", element: <PostDetail /> },
       { path: "about", element: <About /> },
