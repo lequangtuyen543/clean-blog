@@ -408,5 +408,34 @@
       "createdAt": "July 30, 2023",
       "content": "Never in all their history have men been able truly to conceive of the world as one..."
     }
+  ],
+  "user": [
+    {
+      "id": "yWpvNbv",
+      "name": "Le Quang Tuyen",
+      "email": "lequangtuyen@gmail.com",
+      "userName": "lequangtuyen",
+      "password": "1",
+      "terms": true,
+      "token": "fJlQq4OXNqtIe4MzFFPe"
+    },
+    {
+      "id": "kA92LmQ",
+      "name": "Nguyen Van An",
+      "email": "nguyenvanan@gmail.com",
+      "userName": "nguyenvanan",
+      "password": "123456",
+      "terms": true,
+      "token": "X9QeT1LpA0sZMnR8H2Kc"
+    },
+    {
+      "id": "Zr8P0Ds",
+      "name": "Tran Thi Mai",
+      "email": "tranthimai@gmail.com",
+      "userName": "tranthimai",
+      "password": "password123",
+      "terms": true,
+      "token": "QW8sLpM2T0XrE7B9CNaF"
+    }
   ]
 }

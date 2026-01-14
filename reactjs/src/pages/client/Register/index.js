@@ -1,5 +1,5 @@
 import { Button, Card, Checkbox, Form, Input, message } from 'antd';
-import { checkExist, createCompany } from '../../../services/companyService';
+import { checkExist, createUser } from '../../../services/userService';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import generateToken from '../../../helpers/generateToken';
@@ -16,26 +16,28 @@ export const Register = () => {
       values.token = generateToken();
 
       const checkExistEmail = await checkExist("email", values.email);
-      const checkExistPhone = await checkExist("phone", values.phone);
+      const checkExistUserName = await checkExist("userName", values.userName);
 
       if (checkExistEmail.length > 0) {
         messageApi.error('Email already exists!');
         return;
-      } else if (checkExistPhone.length > 0) {
-        messageApi.error('Phone already exists!');
+      } else if (checkExistUserName.length > 0) {
+        messageApi.error('Username already exists!');
         return
       }
 
-      const res = await createCompany(values);
+      const res = await createUser(values);
 
-      if (res) {
-        messageApi.success('Create company successfully!');
-        setTimeout(() => {
-          navigate('/login');
-        }, 3000);
-      } else {
-        messageApi.error('Create company failed!');
-      }
+      console.log('res', res);
+
+      // if (res) {
+      //   messageApi.success('Create user successfully!');
+      //   setTimeout(() => {
+      //     navigate('/login');
+      //   }, 3000);
+      // } else {
+      //   messageApi.error('Create user failed!');
+      // }
     } catch (error) {
       messageApi.error('Something went wrong!');
     } finally {
@@ -45,10 +47,6 @@ export const Register = () => {
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
-  };
-
-  const onChange = e => {
-    console.log(`checked = ${e.target.checked}`);
   };
 
   return (
@@ -103,13 +101,20 @@ export const Register = () => {
 
               <Form.Item
                 name="terms"
-                rules={[{ required: true, message: 'You must agree before submitting.' }]}
+                valuePropName="checked"
+                rules={[
+                  {
+                    validator: (_, value) =>
+                      value
+                        ? Promise.resolve()
+                        : Promise.reject(new Error('You must agree before submitting.')),
+                  },
+                ]}
               >
                 <Checkbox>
                   I agree and accept the <a href="#">terms and conditions</a>
                 </Checkbox>
               </Form.Item>
-
 
 
               <Form.Item label={null}>
