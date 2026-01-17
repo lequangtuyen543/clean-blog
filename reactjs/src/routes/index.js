@@ -6,8 +6,6 @@ import { Login } from "../pages/client/Login/index.js";
 import { Logout } from "../pages/client/Logout/index.js";
 import { Register } from "../pages/client/Register/index.js";
 import { Dashboard } from "../pages/admin/Dashboard";
-import { InfoUser } from "../pages/admin/InfoUser/index.js";
-import { ManageJob } from "../pages/admin/ManageJob/index.js";
 import { ManageCV } from "../pages/admin/ManageCV/index.js";
 import { ReadJob } from "../pages/admin/ManageJob/ReadJob.js";
 import { CreateJob } from "../pages/admin/ManageJob/CreateJob.js";
@@ -17,6 +15,8 @@ import { PostDetail } from "../pages/client/PostDetail/index.js";
 import { About } from "../pages/client/About/index.js";
 import { Contact } from "../pages/client/Contact/index.js";
 import { SamplePost } from "../pages/client/SamplePost/index.js";
+import { UserInfo } from "../pages/admin/UserInfo/index.js";
+import { UserList } from "../pages/admin/UserList/index.js";
 
 export const routes = [
   // Public layout
@@ -45,8 +45,8 @@ export const routes = [
         element: <LayoutAdmin />, // layout admin riêng
         children: [
           { path: "dashboard", element: <Dashboard /> },
-          { path: "info-user", element: <InfoUser /> },
-          { path: "manage-job", element: <ManageJob /> },
+          { path: "user-info", element: <UserInfo /> },
+          { path: "user-list", element: <UserList /> },
           { path: "manage-cv", element: <ManageCV /> },
           { path: "create-job", element: <CreateJob /> },
           { path: "read-job/:id", element: <ReadJob /> },

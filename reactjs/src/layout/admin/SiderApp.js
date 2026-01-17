@@ -1,4 +1,4 @@
-import { UserOutlined, BookOutlined, DashboardOutlined, WechatOutlined } from '@ant-design/icons';
+import { UserOutlined, BookOutlined, DashboardOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -10,14 +10,14 @@ export const SiderApp = () => {
       icon: <DashboardOutlined />,
     },
     {
-      key: 'info-user',
-      label: <Link to="/admin/info-user">Info User</Link>,
+      key: 'user-info',
+      label: <Link to="/admin/user-info">User Info</Link>,
       icon: <UserOutlined />,
     },
     {
-      key: 'manage-job',
-      label: <Link to="/admin/manage-job">Manage Job</Link>,
-      icon: <WechatOutlined />,
+      key: 'user-list',
+      label: <Link to="/admin/user-list">User List</Link>,
+      icon: <UsergroupAddOutlined />,
     },
     {
       key: 'manage-cv',

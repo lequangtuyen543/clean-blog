@@ -7,7 +7,7 @@ import { CreateJob } from "./CreateJob";
 import { UpdateJob } from "./UpdateJob";
 import { DeleteJob } from "./DeleteJob";
 
-export const ManageJob = () => {
+export const UserList = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {

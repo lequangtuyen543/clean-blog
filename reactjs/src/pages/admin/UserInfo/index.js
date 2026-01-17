@@ -4,7 +4,7 @@ import { editUser, getDetailUser } from "../../../services/userService";
 import { getCookie } from "../../../helpers/cookie";
 const { Option } = Select;
 
-export const InfoUser = () => {
+export const UserInfo = () => {
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
   const [data, setData] = useState();
