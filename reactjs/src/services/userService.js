@@ -1,4 +1,4 @@
-import { GET, POST } from "../utils/request";
+import { GET, PATCH, POST } from "../utils/request";
 
 export const checkExist = async (key, value) => {
   const result = await GET(`user?${key}=${value}`);
@@ -12,5 +12,15 @@ export const createUser = async (data) => {
 
 export const loginUser = async (username, password) => {
   const result = await GET(`user?username=${username}&password=${password}`);
+  return result;
+};
+
+export const getDetailUser = async (id) => {
+  const result = await GET(`user/${id}`);
+  return result;
+};
+
+export const editUser = async (id, data) => {
+  const result = await PATCH(`user/${id}`, data);
   return result;
 };
