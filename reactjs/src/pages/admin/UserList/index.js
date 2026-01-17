@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import { getListJobs } from "../../../services/jobsServices";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
-import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
-import { CreateJob } from "./CreateJob";
+import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { UpdateJob } from "./UpdateJob";
 import { DeleteJob } from "./DeleteJob";
+import { getListUser } from "../../../services/userService";
 
 export const UserList = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const res = await getListJobs();
+    const res = await getListUser();
     if (res) {
       setData(res.reverse());
     }
@@ -27,50 +26,59 @@ export const UserList = () => {
 
   const columns = [
     {
+      title: 'No.',
+      key: 'index',
+      render: (_, __, index) => index + 1,
+    },
+    {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a>{text}</a>,
     },
+    // {
+    //   title: 'Tags',
+    //   key: 'tags',
+    //   dataIndex: 'tags',
+    //   render: (_, { tags }) => (
+    //     <>
+    //       {tags.map(tag => {
+    //         return (
+    //           <Tag color='blue' key={tag} className="mb-1">
+    //             {tag}
+    //           </Tag>
+    //         );
+    //       })}
+    //     </>
+    //   ),
+    // },
+    // {
+    //   title: 'Email',
+    //   dataIndex: 'email',
+    //   key: 'email',
+    // },
     {
-      title: 'Tags',
-      key: 'tags',
-      dataIndex: 'tags',
-      render: (_, { tags }) => (
-        <>
-          {tags.map(tag => {
-            return (
-              <Tag color='blue' key={tag} className="mb-1">
-                {tag}
-              </Tag>
-            );
-          })}
-        </>
-      ),
+      title: 'Username',
+      dataIndex: 'username',
+      key: 'username',
     },
-    {
-      title: 'Salary',
-      dataIndex: 'salary',
-      key: 'salary',
-    },
-    {
-      title: 'Create at',
-      dataIndex: 'createAt',
-      key: 'createAt',
-    },
-    {
-      title: 'Update at',
-      dataIndex: 'updateAt',
-      key: 'updateAt',
-    },
+    // {
+    //   title: 'Created at',
+    //   dataIndex: 'createdAt',
+    //   key: 'createdAt',
+    // },
+    // {
+    //   title: 'Updated at',
+    //   dataIndex: 'updatedAt',
+    //   key: 'updatedAt',
+    // },
     {
       title: 'Status',
       key: 'status',
       render: (_, record) => {
-        return record.status ? (
-          <Tag color="green">True</Tag>
+        return record.status === "active" ? (
+          <Tag color="green">Active</Tag>
         ) : (
-          <Tag color="red">False</Tag>
+          <Tag color="red">Inactive</Tag>
         );
       },
     },
@@ -85,7 +93,7 @@ export const UserList = () => {
             </Link>
           </Tooltip>
           <UpdateJob record={record} onReload={handleReload} />
-          <DeleteJob record={record} onReload={handleReload} />          
+          <DeleteJob record={record} onReload={handleReload} />
         </Space>
       ),
     },
@@ -95,11 +103,12 @@ export const UserList = () => {
 
   return (
     <>
-      <h3>Manage Job</h3>
+      <h3>User List</h3>
       <Link to="/admin/create-job">
         <Button icon={<PlusOutlined />} type="primary" style={{ marginBottom: 20 }}>Create Job
         </Button>
       </Link>
+
       <Table columns={columns} dataSource={data} />
     </>
   );

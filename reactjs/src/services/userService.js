@@ -24,3 +24,8 @@ export const editUser = async (id, data) => {
   const result = await PATCH(`user/${id}`, data);
   return result;
 };
+
+export const getListUser = async () => {
+  const result = await GET(`user`);
+  return result;
+};
