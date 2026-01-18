@@ -425,8 +425,8 @@
     {
       "id": "yWpvNbv",
       "name": "Le Quang Tuyen",
-      "email": "lequangtuyen@gmail.com",
-      "username": "lequangtuyen",
+      "email": "tuyen@gmail.com",
+      "username": "tuyen",
       "password": "1",
       "terms": true,
       "token": "fJlQq4OXNqtIe4MzFFPe",
@@ -440,8 +440,8 @@
       "username": "admin2",
       "password": "1",
       "status": "active",
-      "createAt": "2026-01-18 17:18:47",
-      "updateAt": "2026-01-18 17:18:47",
+      "createdAt": "2026-01-18 17:18:47",
+      "updatedAt": "2026-01-18 17:18:47",
       "id": "hjnDnp_"
     }
   ]

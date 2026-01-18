@@ -24,8 +24,8 @@ export const CreateUser = () => {
       }
 
       // Create user
-      values.createAt = getTimeCurrent();
-      values.updateAt = getTimeCurrent();
+      values.createdAt = getTimeCurrent();
+      values.updatedAt = getTimeCurrent();
       values.status = values.status ? "active" : "inactive";
 
       const res = await createUser(values);
