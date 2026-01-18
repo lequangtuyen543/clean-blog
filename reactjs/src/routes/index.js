@@ -7,8 +7,7 @@ import { Logout } from "../pages/client/Logout/index.js";
 import { Register } from "../pages/client/Register/index.js";
 import { Dashboard } from "../pages/admin/Dashboard";
 import { ManageCV } from "../pages/admin/ManageCV/index.js";
-import { ReadJob } from "../pages/admin/ManageJob/ReadJob.js";
-import { CreateJob } from "../pages/admin/ManageJob/CreateJob.js";
+// import { ReadJob } from "../pages/admin/ManageJob/ReadJob.js";
 import { ReadCV } from "../pages/admin/ManageCV/ReadCV.js";
 import { Posts } from "../pages/client/Posts/index.js";
 import { PostDetail } from "../pages/client/PostDetail/index.js";
@@ -17,6 +16,7 @@ import { Contact } from "../pages/client/Contact/index.js";
 import { SamplePost } from "../pages/client/SamplePost/index.js";
 import { UserInfo } from "../pages/admin/UserInfo/index.js";
 import { UserList } from "../pages/admin/UserList/index.js";
+import { CreateUser } from "../pages/admin/UserList/CreateUser.js";
 
 export const routes = [
   // Public layout
@@ -24,7 +24,7 @@ export const routes = [
     path: "/",
     element: <LayoutClient />,
     children: [
-      { index: true, element: <Home /> },      
+      { index: true, element: <Home /> },
       { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "logout", element: <Logout /> },
@@ -47,9 +47,9 @@ export const routes = [
           { path: "dashboard", element: <Dashboard /> },
           { path: "user-info", element: <UserInfo /> },
           { path: "user-list", element: <UserList /> },
+          { path: "create-user", element: <CreateUser /> },
+          // { path: "read-job/:id", element: <ReadJob /> },          
           { path: "manage-cv", element: <ManageCV /> },
-          { path: "create-job", element: <CreateJob /> },
-          { path: "read-job/:id", element: <ReadJob /> },
           { path: "read-cv/:id", element: <ReadCV /> },
           // thêm route admin khác ở đây
         ],

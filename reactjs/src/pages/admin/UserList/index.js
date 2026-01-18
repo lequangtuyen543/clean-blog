@@ -104,8 +104,8 @@ export const UserList = () => {
   return (
     <>
       <h3>User List</h3>
-      <Link to="/admin/create-job">
-        <Button icon={<PlusOutlined />} type="primary" style={{ marginBottom: 20 }}>Create Job
+      <Link to="/admin/create-user">
+        <Button icon={<PlusOutlined />} type="primary" style={{ marginBottom: 20 }}>Create User
         </Button>
       </Link>
 
