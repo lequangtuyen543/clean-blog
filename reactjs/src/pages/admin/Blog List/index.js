@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { getListCV } from "../../../services/cvService";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
-import { EyeOutlined, EditOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
-import { DeleteCV, DeleteJob } from "./DeleteCV";
+import { EyeOutlined } from "@ant-design/icons";
+import { DeleteCV } from "./DeleteCV";
 import { JobName } from "./JobName";
+import { getListPosts } from "../../../services/postsServices";
+import { UpdateJob } from "./UpdateJob";
 
-export const ManageCV = () => {
+export const BlogList = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const res = await getListCV();
+    const res = await getListPosts();
     if (res) {
       setData(res.reverse());
     }
@@ -26,36 +28,23 @@ export const ManageCV = () => {
 
   const columns = [
     {
-      title: 'Job',
-      dataIndex: 'job',
-      key: 'job',
+      title: 'Title',
+      dataIndex: 'title',
+      key: 'title'
+    },
+    {
+      title: 'Created By',
+      dataIndex: 'createdBy',
+      key: 'createdBy',
+    },
+    {
+      title: 'Status',
+      key: 'status',
       render: (_, record) => {
-        return <JobName idJob={record.idJob} />;
-      }
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name'
-    },
-    {
-      title: 'Phone',
-      dataIndex: 'phone',
-      key: 'phone',
-    },
-    {
-      title: 'Create at',
-      dataIndex: 'createAt',
-      key: 'createAt',
-    },
-    {
-      title: 'Status read',
-      key: 'statusRead',
-      render: (_, record) => {
-        return record.statusRead ? (
-          <Tag color="green">True</Tag>
+        return record.status === "active" ? (
+          <Tag color="green">Active</Tag>
         ) : (
-          <Tag color="red">False</Tag>
+          <Tag color="red">Inactive</Tag>
         );
       },
     },
@@ -69,6 +58,7 @@ export const ManageCV = () => {
               <Button icon={<EyeOutlined />} type="default" />
             </Link>
           </Tooltip>
+          <UpdateJob record={record} onReload={handleReload} />
           <DeleteCV record={record} onReload={handleReload} />          
         </Space>
       ),
@@ -79,7 +69,7 @@ export const ManageCV = () => {
 
   return (
     <>
-      <h3>Manage CV</h3>
+      <h3>Blog List</h3>
       <Table columns={columns} dataSource={data} />
     </>
   );

@@ -87,7 +87,7 @@ export const UserList = () => {
       key: 'action',
       render: (_, record) => (
         <Space size="small">
-          <Tooltip title="Detail User">
+          <Tooltip title="Detail">
             <Link to={`/admin/detail-user/${record.id}`}>
               <Button icon={<EyeOutlined />} type="default" />
             </Link>

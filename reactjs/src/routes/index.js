@@ -6,7 +6,6 @@ import { Login } from "../pages/client/Login/index.js";
 import { Logout } from "../pages/client/Logout/index.js";
 import { Register } from "../pages/client/Register/index.js";
 import { Dashboard } from "../pages/admin/Dashboard";
-import { ManageCV } from "../pages/admin/ManageCV/index.js";
 import { ReadCV } from "../pages/admin/ManageCV/ReadCV.js";
 import { Posts } from "../pages/client/Posts/index.js";
 import { PostDetail } from "../pages/client/PostDetail/index.js";
@@ -17,6 +16,7 @@ import { UserInfo } from "../pages/admin/UserInfo/index.js";
 import { UserList } from "../pages/admin/UserList/index.js";
 import { CreateUser } from "../pages/admin/UserList/CreateUser.js";
 import { DetailUser } from "../pages/admin/UserList/DetailUser.js";
+import { BlogList } from "../pages/admin/Blog List/index.js";
 
 export const routes = [
   // Public layout
@@ -49,7 +49,7 @@ export const routes = [
           { path: "user-list", element: <UserList /> },
           { path: "create-user", element: <CreateUser /> },
           { path: "detail-user/:id", element: <DetailUser /> },          
-          { path: "manage-cv", element: <ManageCV /> },
+          { path: "blog-list", element: <BlogList /> },
           { path: "read-cv/:id", element: <ReadCV /> },
           // thêm route admin khác ở đây
         ],

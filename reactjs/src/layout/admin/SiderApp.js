@@ -15,8 +15,8 @@ export const SiderApp = () => {
       icon: <UsergroupAddOutlined />,
     },
     {
-      key: 'manage-cv',
-      label: <Link to="/admin/manage-cv">Manage CV</Link>,
+      key: 'blog-list',
+      label: <Link to="/admin/blog-list">Blog List</Link>,
       icon: <BookOutlined />,
     },
   ];

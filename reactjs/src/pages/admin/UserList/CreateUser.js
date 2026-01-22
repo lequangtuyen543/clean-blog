@@ -73,12 +73,6 @@ export const CreateUser = () => {
               </Form.Item>
             </Col>
 
-            {/* <Col span={24}>
-              <Form.Item name="city" label="City"              >
-                <Select options={optionsCity} mode="multiple" />
-              </Form.Item>
-            </Col> */}
-
             <Col span={24}>
               <Form.Item label="Status active:" name='status' valuePropName="checked" rules={[{ required: true, message: 'Please input your status!' }]}>
                 <Switch />
