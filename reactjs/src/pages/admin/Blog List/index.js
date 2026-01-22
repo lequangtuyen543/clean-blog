@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getListCV } from "../../../services/cvService";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
-import { EyeOutlined } from "@ant-design/icons";
+import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { DeleteCV } from "./DeleteCV";
 import { JobName } from "./JobName";
 import { getListPosts } from "../../../services/postsServices";
@@ -70,6 +70,12 @@ export const BlogList = () => {
   return (
     <>
       <h3>Blog List</h3>
+
+      <Link to="/admin/create-blog">
+        <Button icon={<PlusOutlined />} type="primary" style={{ marginBottom: 20 }}>Create Blog
+        </Button>
+      </Link>
+
       <Table columns={columns} dataSource={data} />
     </>
   );

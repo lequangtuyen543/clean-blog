@@ -1,4 +1,4 @@
-import { GET } from "../utils/request";
+import { GET, POST } from "../utils/request";
 
 export const getListPosts = async () => {
   const result = await GET(`posts`);
@@ -7,5 +7,10 @@ export const getListPosts = async () => {
 
 export const getDetailPost = async (id) => {
   const result = await GET(`posts/${id}`);
+  return result;
+};
+
+export const createPosts = async (data) => {
+  const result = await POST(`posts`, data);
   return result;
 };

@@ -36,22 +36,6 @@ export const UserList = () => {
       key: 'name',
     },
     // {
-    //   title: 'Tags',
-    //   key: 'tags',
-    //   dataIndex: 'tags',
-    //   render: (_, { tags }) => (
-    //     <>
-    //       {tags.map(tag => {
-    //         return (
-    //           <Tag color='blue' key={tag} className="mb-1">
-    //             {tag}
-    //           </Tag>
-    //         );
-    //       })}
-    //     </>
-    //   ),
-    // },
-    // {
     //   title: 'Email',
     //   dataIndex: 'email',
     //   key: 'email',
