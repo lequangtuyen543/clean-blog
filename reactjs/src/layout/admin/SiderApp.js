@@ -10,11 +10,6 @@ export const SiderApp = () => {
       icon: <DashboardOutlined />,
     },
     {
-      key: 'user-info',
-      label: <Link to="/admin/user-info">User Info</Link>,
-      icon: <UserOutlined />,
-    },
-    {
       key: 'user-list',
       label: <Link to="/admin/user-list">User List</Link>,
       icon: <UsergroupAddOutlined />,
@@ -28,10 +23,7 @@ export const SiderApp = () => {
 
   return (
     <Menu
-      // onClick={onClick}
-      // style={{ width: 256 }}
       defaultSelectedKeys={['dashboard']}
-      // defaultOpenKeys={['sub1']}
       mode="inline"
       items={items}
     />

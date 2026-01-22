@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { Button, Space } from "antd";
 import { getCookie } from "../../helpers/cookie";
 import { useSelector } from "react-redux";
-import { DashboardOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { UserOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 export const Header = (props) => {
   const { collapsed, setCollapsed } = props;
@@ -30,8 +30,8 @@ export const Header = (props) => {
             <div className="account">
               {token ? (
                 <Space>
-                  <NavLink to="/admin/dashboard">
-                    <Button icon={<DashboardOutlined />}>Manager</Button>
+                  <NavLink to="/admin/user-info">
+                    <Button icon={<UserOutlined />}>User Info</Button>
                   </NavLink>
                   <NavLink to="/logout">
                     <Button icon={<LogoutOutlined />}>Logout</Button>
