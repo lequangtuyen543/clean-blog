@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
-import { DeleteCV } from "./DeleteCV";
+import { DeleteBlog } from "./DeleteBlog";
 import { getListPosts } from "../../../services/postsServices";
 import { EditBlog } from "./EditBlog";
 
@@ -57,7 +57,7 @@ export const BlogList = () => {
             </Link>
           </Tooltip>
           <EditBlog record={record} onReload={handleReload} />
-          <DeleteCV record={record} onReload={handleReload} />          
+          <DeleteBlog record={record} onReload={handleReload} />          
         </Space>
       ),
     },

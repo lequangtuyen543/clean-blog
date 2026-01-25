@@ -1,4 +1,4 @@
-import { GET, PATCH, POST } from "../utils/request";
+import { DELETE, GET, PATCH, POST } from "../utils/request";
 
 export const getListPosts = async () => {
   const result = await GET(`posts`);
@@ -17,5 +17,10 @@ export const createPost = async (data) => {
 
 export const editPost = async (id, data) => {
   const result = await PATCH(`posts/${id}`, data);
+  return result;
+};
+
+export const deletePost = async (id) => {
+  const result = await DELETE(`posts/${id}`);
   return result;
 };
