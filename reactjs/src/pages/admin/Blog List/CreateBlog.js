@@ -1,9 +1,9 @@
 import { Button, Card, Col, Form, Input, message, Row, Select, Switch } from "antd";
-import { checkExist, createUser, getDetailUser } from "../../../services/userService";
+import { getDetailUser } from "../../../services/userService";
 import getTimeCurrent from "../../../helpers/time";
 import TextArea from "antd/es/input/TextArea";
 import { getCookie } from "../../../helpers/cookie";
-import { createPosts } from "../../../services/postsServices";
+import { createPost } from "../../../services/postsServices";
 
 export const CreateBlog = () => {
   const [form] = Form.useForm();
@@ -20,7 +20,7 @@ export const CreateBlog = () => {
       values.createdBy = userInfo.name;
       values.status = values.status ? "active" : "inactive";
 
-      const res = await createPosts(values);
+      const res = await createPost(values);
 
       console.log(res);
 

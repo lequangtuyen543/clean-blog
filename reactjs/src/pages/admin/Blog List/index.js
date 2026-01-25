@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { DeleteCV } from "./DeleteCV";
 import { getListPosts } from "../../../services/postsServices";
-import { UpdateJob } from "./UpdateJob";
+import { EditBlog } from "./EditBlog";
 
 export const BlogList = () => {
   const [data, setData] = useState([]);
@@ -56,7 +56,7 @@ export const BlogList = () => {
               <Button icon={<EyeOutlined />} type="default" />
             </Link>
           </Tooltip>
-          <UpdateJob record={record} onReload={handleReload} />
+          <EditBlog record={record} onReload={handleReload} />
           <DeleteCV record={record} onReload={handleReload} />          
         </Space>
       ),
