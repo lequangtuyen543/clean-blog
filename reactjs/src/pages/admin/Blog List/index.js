@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { getListCV } from "../../../services/cvService";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { DeleteCV } from "./DeleteCV";
-import { JobName } from "./JobName";
 import { getListPosts } from "../../../services/postsServices";
 import { UpdateJob } from "./UpdateJob";
 
@@ -53,8 +51,8 @@ export const BlogList = () => {
       key: 'action',
       render: (_, record) => (
         <Space size="small">
-          <Tooltip title="Read">
-            <Link to={`/admin/read-cv/${record.id}`}>
+          <Tooltip title="Detail">
+            <Link to={`/admin/detail-blog/${record.id}`}>
               <Button icon={<EyeOutlined />} type="default" />
             </Link>
           </Tooltip>

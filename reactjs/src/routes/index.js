@@ -17,6 +17,7 @@ import { CreateUser } from "../pages/admin/UserList/CreateUser.js";
 import { DetailUser } from "../pages/admin/UserList/DetailUser.js";
 import { BlogList } from "../pages/admin/Blog List/index.js";
 import { CreateBlog } from "../pages/admin/Blog List/CreateBlog.js";
+import { DetailBlog } from "../pages/admin/Blog List/DetailBlog.js";
 
 export const routes = [
   // Public layout
@@ -51,6 +52,7 @@ export const routes = [
           { path: "detail-user/:id", element: <DetailUser /> },          
           { path: "blog-list", element: <BlogList /> },
           { path: "create-blog", element: <CreateBlog /> },
+          { path: "detail-blog/:id", element: <DetailBlog /> },
           // thêm route admin khác ở đây
         ],
       },

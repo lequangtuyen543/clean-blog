@@ -440,44 +440,14 @@
       "updatedAt": "2026-01-17T13:00:00.000Z"
     },
     {
-      "name": "Tuyến Le Quang",
-      "email": "admin2@gmail.com",
-      "username": "admin2",
+      "name": "Start Bootstrap",
+      "email": "startbootstrap@gmail.com",
+      "username": "startbootstrap",
       "password": "1",
       "status": "active",
       "createdAt": "2026-01-18 17:18:47",
       "updatedAt": "2026-01-18 17:18:47",
       "id": "hjnDnp_"
-    },
-    {
-      "title": "blog test",
-      "subtitle": "lorem",
-      "status": "active",
-      "content": "123",
-      "createdAt": "2026-01-22 15:30:58",
-      "updatedAt": "2026-01-22 15:30:58",
-      "createdBy": "Admin 123",
-      "id": "SXUUlQy"
-    },
-    {
-      "title": "blog test",
-      "subtitle": "lorem",
-      "status": "active",
-      "content": "123",
-      "createdAt": "2026-01-22 15:31:16",
-      "updatedAt": "2026-01-22 15:31:16",
-      "createdBy": "Admin 123",
-      "id": "4Oi_pCO"
-    },
-    {
-      "title": "blog test",
-      "subtitle": "lorem",
-      "status": "active",
-      "content": "123",
-      "createdAt": "2026-01-22 15:31:51",
-      "updatedAt": "2026-01-22 15:31:51",
-      "createdBy": "Admin 123",
-      "id": "TnmkY_J"
     }
   ]
 }
