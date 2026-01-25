@@ -1,6 +1,6 @@
 import { Button, Card, Col, Form, Input, message, Row, Select } from "antd";
 import { useEffect, useState } from "react";
-import { editUser, getDetailUser } from "../../../services/userService";
+import { editUser, getDetailUser } from "../../../services/usersService";
 import { getCookie } from "../../../helpers/cookie";
 const { Option } = Select;
 

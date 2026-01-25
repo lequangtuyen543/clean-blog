@@ -25,7 +25,7 @@ export const editUser = async (id, data) => {
   return result;
 };
 
-export const getListUser = async () => {
+export const getListUsers = async () => {
   const result = await GET(`user`);
   return result;
 };

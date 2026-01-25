@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { UpdateJob } from "./UpdateJob";
 import { DeleteJob } from "./DeleteJob";
-import { getListUser } from "../../../services/userService";
+import { getListUsers } from "../../../services/usersService";
 
 export const UserList = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const res = await getListUser();
+    const res = await getListUsers();
     if (res) {
       setData(res.reverse());
     }

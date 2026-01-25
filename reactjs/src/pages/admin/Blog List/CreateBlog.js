@@ -1,5 +1,5 @@
 import { Button, Card, Col, Form, Input, message, Row, Select, Switch } from "antd";
-import { getDetailUser } from "../../../services/userService";
+import { getDetailUser } from "../../../services/usersService";
 import getTimeCurrent from "../../../helpers/time";
 import TextArea from "antd/es/input/TextArea";
 import { getCookie } from "../../../helpers/cookie";

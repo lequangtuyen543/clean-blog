@@ -1,5 +1,5 @@
 import { Button, Card, Checkbox, Form, Input, message, Typography } from 'antd';
-import { checkExist, createUser } from '../../../services/userService';
+import { checkExist, createUser } from '../../../services/usersService';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import generateToken from '../../../helpers/generateToken';

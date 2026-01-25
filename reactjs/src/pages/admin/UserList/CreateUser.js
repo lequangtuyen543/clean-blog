@@ -1,5 +1,5 @@
-import { Button, Card, Col, Form, Input, message, Row, Select, Switch } from "antd";
-import { checkExist, createUser } from "../../../services/userService";
+import { Button, Card, Col, Form, Input, message, Row, Switch } from "antd";
+import { checkExist, createUser } from "../../../services/usersService";
 import getTimeCurrent from "../../../helpers/time";
 
 export const CreateUser = () => {
