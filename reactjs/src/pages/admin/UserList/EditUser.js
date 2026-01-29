@@ -1,11 +1,8 @@
 import { Button, Col, Form, Input, message, Modal, Row, Select, Switch, Tooltip } from 'antd';
 import { EditOutlined } from "@ant-design/icons";
-import { useEffect, useState } from 'react';
-import TextArea from 'antd/es/input/TextArea';
-import { updateJob } from '../../../services/jobsServices';
+import { useState } from 'react';
 import getTimeCurrent from '../../../helpers/time';
-import { getListTags } from "../../../services/tagsServices";
-import { getListCity } from "../../../services/cityServices";
+import { editUser } from '../../../services/usersService';
 
 export const EditUser = (props) => {
   const { record, onReload } = props;
@@ -29,16 +26,16 @@ export const EditUser = (props) => {
     console.log(values);
     try {
       values.updateAt = getTimeCurrent();
-      const res = await updateJob(record.id, values);
+      const res = await editUser(record.id, values);
       if (res) {
-        messageApi.success("Update job successfully!");
+        messageApi.success("Update user successfully!");
         setIsModalOpen(false);
         onReload();
       } else {
-        messageApi.error("Update job failed!");
+        messageApi.error("Update user failed!");
       }
     } catch (error) {
-      messageApi.error("Update job failed!");
+      messageApi.error("Update user failed!");
     }
   }
 
