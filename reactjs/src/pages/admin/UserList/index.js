@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
-import { UpdateJob } from "./UpdateJob";
+import { EditUser } from "./EditUser";
 import { DeleteJob } from "./DeleteJob";
 import { getListUsers } from "../../../services/usersService";
 
@@ -76,7 +76,7 @@ export const UserList = () => {
               <Button icon={<EyeOutlined />} type="default" />
             </Link>
           </Tooltip>
-          <UpdateJob record={record} onReload={handleReload} />
+          <EditUser record={record} onReload={handleReload} />
           <DeleteJob record={record} onReload={handleReload} />
         </Space>
       ),

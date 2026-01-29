@@ -7,42 +7,11 @@ import getTimeCurrent from '../../../helpers/time';
 import { getListTags } from "../../../services/tagsServices";
 import { getListCity } from "../../../services/cityServices";
 
-export const UpdateJob = (props) => {
+export const EditUser = (props) => {
   const { record, onReload } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
-  const [tags, setTags] = useState([]);
-  const [city, setCity] = useState([]);
-
-  const fetchData = async () => {
-    const resTags = await getListTags();
-    const resCity = await getListCity();
-    if (resTags) {
-      setTags(resTags);
-    }
-    if (resCity) {
-      setCity(resCity);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const optionsTags = tags.map((item) => {
-    return {
-      value: item.name,
-      label: item.name
-    }
-  })
-
-  const optionsCity = city.map((item) => {
-    return {
-      value: item.value,
-      label: item.value
-    }
-  })
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -78,12 +47,12 @@ export const UpdateJob = (props) => {
   return (
     <>
       {contextHolder}
-      <Tooltip title="Update">
+      <Tooltip title="Edit">
         <Button icon={<EditOutlined />} type="primary" ghost onClick={showModal} />
       </Tooltip>
 
       <Modal
-        title="Update Job"
+        title="Edit User"
         closable={{ 'aria-label': 'Custom Close Button' }}
         open={isModalOpen}
         onOk={handleOk}
@@ -94,32 +63,26 @@ export const UpdateJob = (props) => {
         <Form form={form} layout="vertical" onFinish={handleSubmit} initialValues={record}>
           <Row gutter={[20, 20]}>
             <Col span={24}>
-              <Form.Item label="Job Name:" name='name' rules={[{ required: true, message: 'Please input company name!' }]}>
+              <Form.Item label="Name:" name='name' rules={[{ required: true, message: 'Please input your name!' }]}>
                 <Input />
               </Form.Item>
             </Col>
 
-            <Col span={16}>
-              <Form.Item label="Tags:" name='tags' rules={[{ required: true, message: 'Please input your tags!' }]}>
-                <Select options={optionsTags} mode="multiple"></Select>
-              </Form.Item>
-            </Col>
-
-            <Col span={8}>
-              <Form.Item label="Salary:" name='salary' >
-                <Input type="number" placeholder="0.00" addonAfter="$" />
+            <Col span={24}>
+              <Form.Item label="Username:" name='username' rules={[{ required: true, message: 'Please input your username!' }]}>
+                <Input />
               </Form.Item>
             </Col>
 
             <Col span={24}>
-              <Form.Item name="city" label="City"              >
-                <Select options={optionsCity} mode="multiple" />
+              <Form.Item label="Email:" name='email' rules={[{ required: true, message: 'Please input your email!' }]}>
+                <Input />
               </Form.Item>
             </Col>
 
             <Col span={24}>
-              <Form.Item label="Description:" name='description' >
-                <TextArea rows={8} />
+              <Form.Item label="Password:" name='password' rules={[{ required: true, message: 'Please input your password!' }]}>
+                <Input.Password />
               </Form.Item>
             </Col>
 
@@ -131,7 +94,7 @@ export const UpdateJob = (props) => {
 
             <Col span={24}>
               <Form.Item>
-                <Button type="primary" htmlType="submit">Submit</Button>
+                <Button type="primary" htmlType="submit">Save</Button>
               </Form.Item>
             </Col>
           </Row>
