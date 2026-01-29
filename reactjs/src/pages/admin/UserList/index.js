@@ -3,8 +3,8 @@ import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import { Link } from "react-router-dom";
 import { EyeOutlined, PlusOutlined } from "@ant-design/icons";
 import { EditUser } from "./EditUser";
-import { DeleteJob } from "./DeleteJob";
 import { getListUsers } from "../../../services/usersService";
+import { DeleteUser } from "./DeleteUser";
 
 export const UserList = () => {
   const [data, setData] = useState([]);
@@ -45,16 +45,6 @@ export const UserList = () => {
       dataIndex: 'username',
       key: 'username',
     },
-    // {
-    //   title: 'Created at',
-    //   dataIndex: 'createdAt',
-    //   key: 'createdAt',
-    // },
-    // {
-    //   title: 'Updated at',
-    //   dataIndex: 'updatedAt',
-    //   key: 'updatedAt',
-    // },
     {
       title: 'Status',
       key: 'status',
@@ -77,7 +67,7 @@ export const UserList = () => {
             </Link>
           </Tooltip>
           <EditUser record={record} onReload={handleReload} />
-          <DeleteJob record={record} onReload={handleReload} />
+          <DeleteUser record={record} onReload={handleReload} />
         </Space>
       ),
     },

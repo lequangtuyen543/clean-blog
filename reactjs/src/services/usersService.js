@@ -1,4 +1,4 @@
-import { GET, PATCH, POST } from "../utils/request";
+import { DELETE, GET, PATCH, POST } from "../utils/request";
 
 export const checkExist = async (key, value) => {
   const result = await GET(`user?${key}=${value}`);
@@ -27,5 +27,10 @@ export const editUser = async (id, data) => {
 
 export const getListUsers = async () => {
   const result = await GET(`user`);
+  return result;
+};
+
+export const deleteUser = async (id) => {
+  const result = await DELETE(`user/${id}`);
   return result;
 };

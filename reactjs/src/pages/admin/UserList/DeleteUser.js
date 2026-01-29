@@ -1,15 +1,14 @@
-import React from 'react';
 import { Button, message, Popconfirm, Tooltip } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons'
-import { deleteJob } from '../../../services/jobsServices';
+import { deleteUser } from '../../../services/usersService';
 
-export const DeleteJob = (props) => {
+export const DeleteUser = (props) => {
   const { record, onReload } = props;
 
   const confirm = async e => {
     console.log(e);
     message.success('Click on Yes');
-    const res = await deleteJob(record.id);
+    const res = await deleteUser(record.id);
     if (res) {
       onReload();
     }
@@ -18,11 +17,12 @@ export const DeleteJob = (props) => {
     console.log(e);
     message.error('Click on No');
   };
+
   return (
     <Tooltip title="Delete">
       <Popconfirm
-        title="Delete the task"
-        description="Are you sure to delete this job?"
+        title="Delete the user"
+        description="Are you sure to delete this user?"
         onConfirm={confirm}
         onCancel={cancel}
         okText="Yes"
@@ -31,6 +31,5 @@ export const DeleteJob = (props) => {
         <Button icon={<DeleteOutlined />} danger />
       </Popconfirm>
     </Tooltip>
-
   )
 }
