@@ -18,6 +18,7 @@ import { DetailUser } from "../pages/admin/UserList/DetailUser.js";
 import { BlogList } from "../pages/admin/Blog List/index.js";
 import { CreateBlog } from "../pages/admin/Blog List/CreateBlog.js";
 import { DetailBlog } from "../pages/admin/Blog List/DetailBlog.js";
+import NotFound from "../pages/client/NotFound/index.js";
 
 export const routes = [
   // Public layout
@@ -34,6 +35,8 @@ export const routes = [
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "sample-post", element: <SamplePost /> },
+      // 👇 404 public
+      { path: "*", element: <NotFound /> },
     ],
   },
 
@@ -49,7 +52,7 @@ export const routes = [
           { path: "user-info", element: <UserInfo /> },
           { path: "user-list", element: <UserList /> },
           { path: "create-user", element: <CreateUser /> },
-          { path: "detail-user/:id", element: <DetailUser /> },          
+          { path: "detail-user/:id", element: <DetailUser /> },
           { path: "blog-list", element: <BlogList /> },
           { path: "create-blog", element: <CreateBlog /> },
           { path: "detail-blog/:id", element: <DetailBlog /> },
